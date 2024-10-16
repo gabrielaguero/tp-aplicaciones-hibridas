@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Verse</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Game Verse</h1>
+    <p class="p-info">En esta API vas a poder obtener información de los videojuegos más populares</p>
+
+    <section>
+        <h2>Endpoints:</h2>
+        <ul>
+            <h3>Videojuegos</h3>
+            <li>
+                <span>Obtener todos los juegos</span>
+                <p>GET /games</p> 
+                <p><strong>Descripción: </strong>Obtiene una lista de todos los videojuegos registrados en la base de datos.</p>
+            </li>
+            <li>
+                <span>Buscar videojuego por nombre</span>
+                <p>GET /games/nombre?name=nombre_del_juego</p> 
+                <p><strong>Descripción: </strong>Permite buscar un videojuego por su nombre.</p>
+                <p><strong>Parámetro: </strong>name (nombre del videojuego)</p>
+            </li>
+            <li>
+                <span>Buscar videojuego por género</span>
+                <p>GET /games/genero?genre=genero</p> 
+                <p><strong>Descripción: </strong>Permite buscar un videojuegos por género.</p>
+                <p><strong>Parámetro: </strong>genre (genero del videojuego)</p>
+            </li>
+            <li>
+                <span>Crear videojuego</span>
+                <p>POST /games/</p> 
+                <p><strong>Descripción: </strong>Crea un nuevo videojuego en la base de datos.</p>
+                <p><strong>Esquema: </strong>
+                    {
+                        "name": "nombre del juego",
+                        "genre": "generos",
+                        "description": "Breve descripción",
+                        "developer": "Desarrollador del videojuego",
+                        "release_date": "fecha de lanzamiento",
+                        "platform": "Plataformas disponibles",
+                        "cover": "Imagen de portada"
+                    }
+                </p>
+            </li>
+            <li>
+                <span>Actualizar un videojuego</span>
+                <p>PUT /games/:id</p> 
+                <p><strong>Descripción: </strong>Actualiza la información de un videojuego existente.</p>
+                <p><strong>Parámetro: </strong>ID (ID del juego a actualizar)</p>
+                <p><strong>Autenticación: </strong>Requiere Autenticación</p>
+            </li>
+            <li>
+                <span>Eliminar un videojuego</span>
+                <p>DELETE /games/:id</p> 
+                <p><strong>Descripción: </strong>Elimina un videojuego por su ID.</p>
+                <p><strong>Parámetro: </strong>ID (ID del videojuego a eliminar)</p>
+                <p><strong>Autenticación: </strong>Requiere Autenticación</p>
+            </li>
+
+            <h3>Usuarios</h3>
+            <li>
+                <span>Obtener todos los usuarios</span>
+                <p>GET /users</p> 
+                <p><strong>Descripción: </strong>Obtiene una lista de todos los usuarios registrados en la base de datos.</p>
+            </li>
+            <li>
+                <span>Crear un usuario</span>
+                <p>POST /users</p> 
+                <p><strong>Descripción: </strong>Crea un nuevo usuario en la base de datos.</p>
+                <p><strong>Esquema: </strong>
+                    {
+                        "name": "nombre del usuario",
+                        "email": "email del usuario",
+                        "password": "crear contraseña",
+                        "imagen": "imagen del usuario",
+                        
+                    }
+                </p>
+            </li>
+            <li>
+                <span>Iniciar sesión</span>
+                <p>POST /login</p> 
+                <p><strong>Descripción: </strong>Obtiene una lista de todos los usuarios registrados en la base de datos.</p>
+                <p><strong>Esquema: </strong>
+                    {
+                        "email": "email del usuario registrado",
+                        "password": "contraseña registrada",
+                    }
+                </p>
+            </li>
+            <li>
+                <span>Actualizar usuario</span>
+                <p>PUT /users/:email</p> 
+                <p><strong>Descripción: </strong>Actualiza la información de un usuario existente.</p>
+                <p><strong>Parámetro: </strong>Email (Email que quiera actualizar)</p>
+                <p><strong>Autenticación: </strong>Requiere Autenticación</p>
+            </li>
+            <li>
+                <span>Eliminar un videojuego</span>
+                <p>DELETE /users/:id</p> 
+                <p><strong>Descripción: </strong>Elimina un usuario por su ID.</p>
+                <p><strong>Parámetro: </strong>ID (ID del usuario a eliminar)</p>
+                <p><strong>Autenticación: </strong>Requiere Autenticación</p>
+            </li>
+        </ul>
+    </section>
+    <footer>
+        <p>Davinci 2024</p>
+        <div>
+            <p><span>Alumno: </span>Gabriel Agüero</p>
+            <p><span>Profesora: </span>Marcos Galbán, Camila Belén</p>
+            <p><span>Materia: </span>Aplicaciones Híbridas</p>
+            <p><span>Comisión: </span>DWN4AV</p>
+        </div>
+    </footer>
+</body>
+</html>
