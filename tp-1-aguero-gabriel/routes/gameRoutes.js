@@ -26,7 +26,7 @@ route.get('/nombre', async (req, res) => {
 
 route.get("/genero", async (req, res) => {
     try {
-        const genre = req.params.genre; 
+        const genre = req.query.genre; 
         const games = await getGamesByGenre(genre); 
         res.status(200).json(games); 
     } catch (error) {
@@ -36,6 +36,7 @@ route.get("/genero", async (req, res) => {
         });
     }
 });
+
 
 
 route.post("/", async (req, res) => {

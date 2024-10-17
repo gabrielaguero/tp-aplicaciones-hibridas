@@ -16,7 +16,9 @@ async function getGameByName(name) {
 
 async function getGamesByGenre(genre) {
     try {
-        const games = await gamesModel.find({ genres: { $in: [genre] } });
+        const games = await gamesModel.find({
+            genre: { $regex: new RegExp(genre, "i") } 
+        });
         if (games.length === 0) {
             throw new Error("No se encontraron juegos para este género");
         }
@@ -25,6 +27,7 @@ async function getGamesByGenre(genre) {
         throw new Error(error.message);
     }
 }
+
 
 async function createGame(body) { 
     let newGame = new gamesModel({
